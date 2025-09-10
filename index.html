@@ -1,139 +1,143 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head>     
-  <meta charset="UTF-8">     
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-  <title>Landing Page</title>     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOCK MARKET TRADING TIPS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to bottom right, #001f3f, #000000);
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-  <style>        
-    body {     
-      font-family: Arial, sans-serif;     
-      margin: 0;     
-      padding: 0;     
-      background-image: url('s.jpg');     
-      background-repeat: no-repeat;   /* Prevents tiling */     
-      background-size: cover;         /* Stretches image to cover screen */     
-      background-position: center;    /* Centers the image */     
-      background-attachment: fixed;   /* Keeps it fixed like wallpaper */     
-      display: flex;     
-      justify-content: center;     
-      align-items: center;     
-      height: 100vh; 
-    }          
+        .container {
+            background: rgba(25, 25, 25, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 600px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            padding: 32px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
 
-    .container {             
-      background: rgba(255, 255, 255, 0.2); /* Transparent white */  
-      backdrop-filter: blur(10px);  /* Blur effect */  
-      -webkit-backdrop-filter: blur(10px); /* Safari support */  
-      width: 100%;             
-      max-width: 600px;             
-      border-radius: 10px;             
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);             
-      padding: 20px;             
-      text-align: center;             
-      position: relative;         
-    }         
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 24px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 4px solid #4ade80;
+            transition: transform 0.3s ease-in-out;
+        }
 
-    .container img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;         /* Makes it a circle */
-      object-fit: cover;          /* Ensures the image fills the circle */
-      margin: 0 auto;             /* Center it inside the container */
-      display: block;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds shadow */
-    }
+        .logo:hover {
+            transform: scale(1.05);
+        }
 
-    .countdown {             
-      font-size: 32px;             
-      font-weight: bold;             
-      color: #fff;             
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);  
-      margin-top: 20px;         
-    }         
+        .heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ade80;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
 
-    .button {             
-      background-color: #0088cc;             
-      color: white;             
-      padding: 15px 30px;             
-      text-decoration: none;             
-      font-size: 16px;             
-      border-radius: 5px;             
-      display: inline-block;             
-      margin-top: 20px;         
-    }         
+        .subheading {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            margin-bottom: 16px;
+        }
 
-    .button:hover {             
-      background-color: #006699;         
-    }         
+        .countdown {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4ade80;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-    .heading {             
-      font-size: 32px;             
-      font-weight: bold;             
-      color: #fff;             
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);  
-      margin-top: 20px;         
-    }         
+        .button {
+            background-color: #22c55e;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 1;
+        }
 
-    .subheading {             
-      font-size: 18px;             
-      color: #fff;             
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);  
-      margin-top: 10px;         
-    }         
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+        }
+    </style>
 
-    .timer {             
-      font-size: 24px;             
-      color: #fff;             
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);  
-      margin-top: 20px;         
-    }     
-  </style> 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '739096388925103');
-  fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=739096388925103&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <div class="container">
+        <img src="share.jpg" alt="Stock Market Trading Tips Logo" class="logo">
+        <div class="heading">STOCK MARKET TRADING TIPS</div>
+        <div class="subheading">Unlock your trading potential with our expert analysis and daily profitable tips.</div>
+        <div class="countdown" id="countdown">60 Seconds Left</div>
+        <div class="subheading">Join the community that transforms trading into profit.</div>
+        <a href="https://t.me/+Z6CMB2_RyP4zZTA1" class="button" target="_blank">JOIN OUR TELEGRAM CHANNEL</a>
+    </div>
 
-</head> 
-<body>      
+    <script>
+        let countdownTime = 60;
+        const countdownElement = document.getElementById('countdown');
 
-  <div class="container">         
-    <img src="logo.jpg" alt="Akash Gallaxy">         
-    <div class="heading">AKASH GALLAXY</div>         
-    <div class="subheading">India's No.1 Tennis Analyst</div>         
-    <div class="timer" id="countdown">59 Seconds Left</div>         
-    <div class="subheading">Profit ka Betaj Badshah Matlab Akash Gallaxy</div>         
-    <a href="https://t.me/+cKHiUlRz7GxjOWQ1" class="button" target="_blank">JOIN OUR TELEGRAM CHANNEL</a>     
-  </div>      
+        const interval = setInterval(function() {
+            countdownTime--;
+            countdownElement.textContent = countdownTime + " Seconds Left";
 
-  <script>         
-    let countdownTime = 59;         
-    const countdownElement = document.getElementById('countdown');                  
-
-    const interval = setInterval(function() {             
-      countdownTime--;             
-      countdownElement.textContent = countdownTime + " Seconds Left";              
-
-      if (countdownTime <= 0) {                 
-        clearInterval(interval);             
-      }         
-    }, 1000);     
-  </script>  
-
-</body> 
+            if (countdownTime <= 0) {
+                clearInterval(interval);
+                countdownElement.textContent = "Time's up!";
+            }
+        }, 1000);
+    </script>
+</body>
 </html>
